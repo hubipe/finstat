@@ -1,0 +1,25 @@
+{
+	"name": "hubipe/finstat",
+	"description": "FinStat.sk API client for PHP",
+	"keywords": ["finstat", "api", "finstat api"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Petr Hubík",
+			"homepage": "http://hubik.net"
+		}
+	],
+	"require": {
+		"php": "~7.0",
+		"ext-json": "*",
+		"ext-mbstring": "*",
+		"consistence/consistence": "~1.0",
+		"nette/utils": ">=2.2"
+	},
+	"suggest": {
+		"guzzlehttp/guzzle": "If you don't want to implement your own API request client (IRequestClient), the Guzzle HTTP client is required."
+	},
+	"autoload": {
+		"psr-4": { "Hubipe\\FinStat\\": [ "src" ] }
+	}
+}
