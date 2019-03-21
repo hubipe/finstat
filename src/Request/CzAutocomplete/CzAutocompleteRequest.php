@@ -37,8 +37,8 @@ class CzAutocompleteRequest extends ObjectPrototype implements IRequest
 		string $query,
 		string $apiKey,
 		string $privateKey,
-		string $stationId,
-		string $stationName)
+		string $stationId = NULL,
+		string $stationName = NULL)
 	{
 		$query = Strings::trim($query);
 		if (Strings::length($query) < 3) {

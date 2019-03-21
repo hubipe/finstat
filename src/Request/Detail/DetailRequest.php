@@ -36,8 +36,8 @@ class DetailRequest extends ObjectPrototype implements IRequest
 		string $ico,
 		string $apiKey,
 		string $privateKey,
-		string $stationId,
-		string $stationName)
+		string $stationId = NULL,
+		string $stationName = NULL)
 	{
 		$numericIco = preg_replace('/\D+/', '', $ico);
 		if ($numericIco === '') {
