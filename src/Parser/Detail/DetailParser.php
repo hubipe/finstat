@@ -69,7 +69,7 @@ class DetailParser extends ObjectPrototype implements IParser
 			->setRegion($json->Region)
 			->setCountry($json->Country)
 			->setActivity($json->Activity)
-			->setCreated(TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->Created))
+			->setCreated($json->Created === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->Created))
 			->setCancelled($json->Cancelled === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->Cancelled))
 			->setSuspendedAsPerson($json->SuspendedAsPerson)
 			->setUrl($json->Url)

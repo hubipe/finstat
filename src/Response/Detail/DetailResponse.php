@@ -61,7 +61,7 @@ class DetailResponse extends BaseResponse
 	/** @var string|NULL */
 	private $activity;
 
-	/** @var \DateTimeImmutable */
+	/** @var \DateTimeImmutable|NULL */
 	private $created;
 
 	/** @var \DateTimeImmutable|NULL */
@@ -339,12 +339,15 @@ class DetailResponse extends BaseResponse
 		return $this;
 	}
 
-	public function getCreated(): \DateTimeImmutable
+	/**
+	 * @return \DateTimeImmutable|NULL
+	 */
+	public function getCreated()
 	{
 		return $this->created;
 	}
 
-	public function setCreated(\DateTimeImmutable $created): self
+	public function setCreated(\DateTimeImmutable $created = NULL): self
 	{
 		$this->created = $created;
 		return $this;
