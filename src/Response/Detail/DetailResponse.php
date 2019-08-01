@@ -40,7 +40,7 @@ class DetailResponse extends BaseResponse
 	/** @var string|NULL */
 	private $street;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $streetNumber;
 
 	/** @var string */
@@ -256,12 +256,15 @@ class DetailResponse extends BaseResponse
 		return $this;
 	}
 
-	public function getStreetNumber(): string
+	/**
+	 * @return string|null
+	 */
+	public function getStreetNumber()
 	{
 		return $this->streetNumber;
 	}
 
-	public function setStreetNumber(string $streetNumber): self
+	public function setStreetNumber(string $streetNumber = NULL): self
 	{
 		$this->streetNumber = $streetNumber;
 		return $this;
