@@ -40,7 +40,7 @@ class GuzzleRequestClient extends ObjectPrototype implements IRequestClient
 				$options
 			);
 		} catch (\GuzzleHttp\Exception\RequestException $e) {
-			throw new RequestException('FinStat request error: ' . $e->getMessage(), NULL, $e);
+			throw new RequestException('FinStat request error: ' . $e->getMessage(), 0, $e);
 		}
 
 		$statusCode = $response->getStatusCode();

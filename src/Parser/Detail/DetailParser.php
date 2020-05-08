@@ -33,7 +33,7 @@ class DetailParser extends ObjectPrototype implements IParser
 		} catch (JsonException $e) {
 			throw new ParserException(
 				sprintf('Response is not in valid format: %s', $e->getMessage()),
-				NULL,
+				0,
 				$e
 			);
 		}
