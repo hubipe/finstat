@@ -18,6 +18,7 @@ class GuzzleRequestClient extends ObjectPrototype implements IRequestClient
 
 	/** @var Client */
 	private $client;
+	private $options;
 
 	public function call(IRequest $request): IResponse
 	{
@@ -26,7 +27,7 @@ class GuzzleRequestClient extends ObjectPrototype implements IRequestClient
 			$serviceUrl .= '.json';
 		}
 
-		$options = [];
+		$options = $this->options;
 		if ($request->getData() !== []
 			&& $request->getMethod() === HttpMethod::get(HttpMethod::POST)) {
 			$options[RequestOptions::FORM_PARAMS] = $request->getData();
@@ -65,5 +66,14 @@ class GuzzleRequestClient extends ObjectPrototype implements IRequestClient
 		return $this->client;
 	}
 
+	/**
+	 * @param array $options
+	 *
+	 * Set extra options for HTTP Client
+	 */
+	public function setOptions(array $options)
+	{
+		$this->options = $options;
+	}
 
 }
