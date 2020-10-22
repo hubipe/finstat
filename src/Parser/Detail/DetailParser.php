@@ -51,7 +51,7 @@ class DetailParser extends ObjectPrototype implements IParser
 						$judgementIndicator = $judgementIndicator->add(JudgementIndicator::get(JudgementIndicator::PLAINTIFF));
 						break;
 					default:
-						throw new ParseException(sprintf('Judgement indicator %s is unexpected.', $row->Name));
+						throw new ParserException(sprintf('Judgement indicator %s is unexpected.', $row->Name));
 				}
 			}
 		}
