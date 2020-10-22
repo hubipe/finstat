@@ -43,16 +43,16 @@ class DetailResponse extends BaseResponse
 	/** @var string|NULL */
 	private $streetNumber;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $zipCode;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $city;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $district;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $region;
 
 	/** @var string|NULL */
@@ -270,45 +270,57 @@ class DetailResponse extends BaseResponse
 		return $this;
 	}
 
-	public function getZipCode(): string
+	/**
+	 * @return string|NULL
+	 */
+	public function getZipCode()
 	{
 		return $this->zipCode;
 	}
 
-	public function setZipCode(string $zipCode): self
+	public function setZipCode(string $zipCode = NULL): self
 	{
 		$this->zipCode = $zipCode;
 		return $this;
 	}
 
-	public function getCity(): string
+	/**
+	 * @return string|NULL
+	 */
+	public function getCity()
 	{
 		return $this->city;
 	}
 
-	public function setCity(string $city): self
+	public function setCity(string $city = NULL): self
 	{
 		$this->city = $city;
 		return $this;
 	}
 
-	public function getDistrict(): string
+	/**
+	 * @return string|NULL
+	 */
+	public function getDistrict()
 	{
 		return $this->district;
 	}
 
-	public function setDistrict(string $district): self
+	public function setDistrict(string $district = NULL): self
 	{
 		$this->district = $district;
 		return $this;
 	}
 
-	public function getRegion(): string
+	/**
+	 * @return string|NULL
+	 */
+	public function getRegion()
 	{
 		return $this->region;
 	}
 
-	public function setRegion(string $region): self
+	public function setRegion(string $region = NULL): self
 	{
 		$this->region = $region;
 		return $this;
