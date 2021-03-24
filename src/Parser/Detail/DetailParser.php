@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Hubipe\FinStat\Parser\Detail;
 
 use Consistence\ObjectPrototype;
-use Consistence\Time\TimeFormat;
 use Hubipe\FinStat\Enum\JudgementIndicator;
 use Hubipe\FinStat\Enum\Profit;
 use Hubipe\FinStat\Enum\Revenue;
@@ -69,8 +68,8 @@ class DetailParser extends ObjectPrototype implements IParser
 			->setRegion($json->Region)
 			->setCountry($json->Country)
 			->setActivity($json->Activity)
-			->setCreated($json->Created === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->Created))
-			->setCancelled($json->Cancelled === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->Cancelled))
+			->setCreated($json->Created === NULL ? NULL : new \DateTimeImmutable($json->Created))
+			->setCancelled($json->Cancelled === NULL ? NULL : new \DateTimeImmutable($json->Cancelled))
 			->setSuspendedAsPerson($json->SuspendedAsPerson)
 			->setUrl($json->Url)
 			->setWarning($json->Warning)
@@ -97,8 +96,8 @@ class DetailParser extends ObjectPrototype implements IParser
 
 		if ($json->IcDphAdditional !== NULL) {
 			$detail->setIcDphParagraph($json->IcDphAdditional->Paragraph)
-				->setIcDphCancelListDetectedDate($json->IcDphAdditional->CancelListDetectedDate === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->IcDphAdditional->CancelListDetectedDate))
-				->setIcDphRemoveListDetectedDate($json->IcDphAdditional->RemoveListDetectedDate === NULL ? NULL : TimeFormat::createDateTimeImmutableFromFormat(TimeFormat::ISO8601_WITHOUT_TIMEZONE, $json->IcDphAdditional->RemoveListDetectedDate));
+				->setIcDphCancelListDetectedDate($json->IcDphAdditional->CancelListDetectedDate === NULL ? NULL : new \DateTimeImmutable($json->IcDphAdditional->CancelListDetectedDate))
+				->setIcDphRemoveListDetectedDate($json->IcDphAdditional->RemoveListDetectedDate === NULL ? NULL : new \DateTimeImmutable($json->IcDphAdditional->RemoveListDetectedDate));
 		}
 
 		return $detail;
