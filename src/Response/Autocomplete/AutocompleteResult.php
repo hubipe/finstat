@@ -15,7 +15,7 @@ class AutocompleteResult extends ObjectPrototype
 	/** @var string */
 	private $name;
 
-	/** @var string */
+	/** @var string|NULL */
 	private $city;
 
 	/** @var bool */
@@ -24,8 +24,8 @@ class AutocompleteResult extends ObjectPrototype
 	public function __construct(
 		string $ico,
 		string $name,
-		string $city,
-		bool $cancelled)
+		string $city = NULL,
+		bool $cancelled = FALSE)
 	{
 		$this->ico = $ico;
 		$this->name = $name;
@@ -43,7 +43,10 @@ class AutocompleteResult extends ObjectPrototype
 		return $this->name;
 	}
 
-	public function getCity(): string
+	/**
+	 * @return string|NULL
+	 */
+	public function getCity()
 	{
 		return $this->city;
 	}
