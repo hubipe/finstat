@@ -11,10 +11,12 @@ use Hubipe\FinStat\Exception\ResponseException;
 use Hubipe\FinStat\Request\Autocomplete\AutocompleteRequest;
 use Hubipe\FinStat\Request\CzAutocomplete\CzAutocompleteRequest;
 use Hubipe\FinStat\Request\Detail\DetailRequest;
+use Hubipe\FinStat\Request\CzDetail\CzDetailRequest;
 use Hubipe\FinStat\Request\IRequestClient;
 use Hubipe\FinStat\Response\Autocomplete\AutocompleteResponse;
 use Hubipe\FinStat\Response\CzAutocomplete\CzAutocompleteResponse;
 use Hubipe\FinStat\Response\Detail\DetailResponse;
+use Hubipe\FinStat\Response\CzDetail\CzDetailResponse;
 
 class FinStat extends ObjectPrototype
 {
@@ -104,6 +106,27 @@ class FinStat extends ObjectPrototype
 	public function detail(string $ico): DetailResponse
 	{
 		$request = new DetailRequest(
+			$ico,
+			$this->apiKey,
+			$this->privateKey,
+			$this->stationId,
+			$this->stationName
+		);
+
+		$response = $this->requestClient->call($request);
+		return $response;
+	}
+
+	/**
+	 * @param string $ico
+	 * @return CzDetailRequest
+	 * @throws InvalidArgumentException
+	 * @throws ResponseException
+	 * @throws ParserException
+	 */
+	public function czDetail(string $ico): CzDetailResponse
+	{
+		$request = new CzDetailRequest(
 			$ico,
 			$this->apiKey,
 			$this->privateKey,
