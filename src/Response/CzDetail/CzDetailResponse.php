@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Hubipe\FinStat\Response\CzDetail;
 
-use Hubipe\FinStat\Enum\JudgementIndicator;
-use Hubipe\FinStat\Enum\Profit;
-use Hubipe\FinStat\Enum\Revenue;
 use Hubipe\FinStat\Response\BaseResponse;
 
 class CzDetailResponse extends BaseResponse

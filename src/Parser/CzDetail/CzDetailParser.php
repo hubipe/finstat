@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Hubipe\FinStat\Parser\CzDetail;
 
 use Consistence\ObjectPrototype;
-use Hubipe\FinStat\Enum\JudgementIndicator;
-use Hubipe\FinStat\Enum\Profit;
-use Hubipe\FinStat\Enum\Revenue;
 use Hubipe\FinStat\Exception\ParserException;
 use Hubipe\FinStat\Exception\ResponseException;
 use Hubipe\FinStat\Parser\IParser;
