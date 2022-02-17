@@ -682,8 +682,8 @@ class DetailResponse extends BaseResponse
 	}
 
 	/**
-     	* @return string|NULL
-     	*/
+     	 * @return string|NULL
+     	 */
     	public function getBankAccounts()
     	{
         	return $this->bankAccounts;
