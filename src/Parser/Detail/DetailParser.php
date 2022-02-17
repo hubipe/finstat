@@ -12,6 +12,7 @@ use Hubipe\FinStat\Exception\ParserException;
 use Hubipe\FinStat\Exception\ResponseException;
 use Hubipe\FinStat\Parser\IParser;
 use Hubipe\FinStat\Request\IRequest;
+use Hubipe\FinStat\Response\Detail\BankAccount;
 use Hubipe\FinStat\Response\Detail\DetailResponse;
 use Hubipe\FinStat\Response\IResponse;
 use Nette\Utils\Json;
@@ -92,15 +93,20 @@ class DetailParser extends ObjectPrototype implements IParser
 			->setRevenueActual($json->RevenueActual)
 			->setJudgementIndicators($judgementIndicator)
 			->setJudgementFinstatLink($json->JudgementFinstatLink)
-			->setSalesCategory($json->SalesCategory)
-         		->setBankAccounts($json->BankAccounts)
-        		;
-
+			->setSalesCategory($json->SalesCategory);
 
 		if ($json->IcDphAdditional !== NULL) {
 			$detail->setIcDphParagraph($json->IcDphAdditional->Paragraph)
 				->setIcDphCancelListDetectedDate($json->IcDphAdditional->CancelListDetectedDate === NULL ? NULL : new \DateTimeImmutable($json->IcDphAdditional->CancelListDetectedDate))
 				->setIcDphRemoveListDetectedDate($json->IcDphAdditional->RemoveListDetectedDate === NULL ? NULL : new \DateTimeImmutable($json->IcDphAdditional->RemoveListDetectedDate));
+		}
+
+		if ($json->BankAccounts !== NULL) {
+			$bankAccounts = [];
+			foreach ((array)$json->BankAccounts as $row) {
+				$bankAccounts[] = new BankAccount($row->AccountNumber, new \DateTimeImmutable($row->PublishedAt));
+			}
+			$detail->setBankAccounts($bankAccounts);
 		}
 
 		return $detail;

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Hubipe\FinStat\Response\Detail;
 
+use Consistence\Type\Type;
+use DateTimeImmutable;
 use Hubipe\FinStat\Enum\JudgementIndicator;
 use Hubipe\FinStat\Enum\Profit;
 use Hubipe\FinStat\Enum\Revenue;
@@ -28,10 +30,10 @@ class DetailResponse extends BaseResponse
 	/** @var string|NULL */
 	private $icDphParagraph;
 
-	/** @var \DateTimeImmutable|NULL */
+	/** @var DateTimeImmutable|NULL */
 	private $icDphCancelListDetectedDate;
 
-	/** @var \DateTimeImmutable|NULL */
+	/** @var DateTimeImmutable|NULL */
 	private $icDphRemoveListDetectedDate;
 
 	/** @var string */
@@ -61,10 +63,10 @@ class DetailResponse extends BaseResponse
 	/** @var string|NULL */
 	private $activity;
 
-	/** @var \DateTimeImmutable|NULL */
+	/** @var DateTimeImmutable|NULL */
 	private $created;
 
-	/** @var \DateTimeImmutable|NULL */
+	/** @var DateTimeImmutable|NULL */
 	private $cancelled;
 
 	/** @var bool */
@@ -135,9 +137,9 @@ class DetailResponse extends BaseResponse
 
 	/** @var string|NULL */
 	private $salesCategory;
-	
-	/** @var array|NULL */
-    	private $bankAccounts;
+
+	/** @var BankAccount[]|NULL */
+	private $bankAccounts;
 
 	public function getIco(): string
 	{
@@ -207,28 +209,28 @@ class DetailResponse extends BaseResponse
 	}
 
 	/**
-	 * @return \DateTimeImmutable|NULL
+	 * @return DateTimeImmutable|NULL
 	 */
 	public function getIcDphCancelListDetectedDate()
 	{
 		return $this->icDphCancelListDetectedDate;
 	}
 
-	public function setIcDphCancelListDetectedDate(\DateTimeImmutable $icDphCancelListDetectedDate = NULL): self
+	public function setIcDphCancelListDetectedDate(DateTimeImmutable $icDphCancelListDetectedDate = NULL): self
 	{
 		$this->icDphCancelListDetectedDate = $icDphCancelListDetectedDate;
 		return $this;
 	}
 
 	/**
-	 * @return \DateTimeImmutable|NULL
+	 * @return DateTimeImmutable|NULL
 	 */
 	public function getIcDphRemoveListDetectedDate()
 	{
 		return $this->icDphRemoveListDetectedDate;
 	}
 
-	public function setIcDphRemoveListDetectedDate(\DateTimeImmutable $icDphRemoveListDetectedDate = NULL): self
+	public function setIcDphRemoveListDetectedDate(DateTimeImmutable $icDphRemoveListDetectedDate = NULL): self
 	{
 		$this->icDphRemoveListDetectedDate = $icDphRemoveListDetectedDate;
 		return $this;
@@ -358,28 +360,28 @@ class DetailResponse extends BaseResponse
 	}
 
 	/**
-	 * @return \DateTimeImmutable|NULL
+	 * @return DateTimeImmutable|NULL
 	 */
 	public function getCreated()
 	{
 		return $this->created;
 	}
 
-	public function setCreated(\DateTimeImmutable $created = NULL): self
+	public function setCreated(DateTimeImmutable $created = NULL): self
 	{
 		$this->created = $created;
 		return $this;
 	}
 
 	/**
-	 * @return \DateTimeImmutable|NULL
+	 * @return DateTimeImmutable|NULL
 	 */
 	public function getCancelled()
 	{
 		return $this->cancelled;
 	}
 
-	public function setCancelled(\DateTimeImmutable $cancelled = NULL): self
+	public function setCancelled(DateTimeImmutable $cancelled = NULL): self
 	{
 		$this->cancelled = $cancelled;
 		return $this;
@@ -682,18 +684,19 @@ class DetailResponse extends BaseResponse
 	}
 
 	/**
-     	 * @return string|NULL
-     	 */
-    	public function getBankAccounts()
-    	{
-        	return $this->bankAccounts;
-    	}
+	 * @return BankAccount[]|NULL
+	 */
+	public function getBankAccounts()
+	{
+		return $this->bankAccounts;
+	}
 
-    	public function setBankAccounts(array $bankAccounts = NULL): self
-    	{
-        	$this->bankAccounts = $bankAccounts;
-        	return $this;
-    	}
+	public function setBankAccounts(array $bankAccounts = NULL): self
+	{
+		Type::checkType($bankAccounts, BankAccount::class . '[]|NULL');
+		$this->bankAccounts = $bankAccounts;
+		return $this;
+	}
 
 
 }
