@@ -53,5 +53,6 @@ This client has implemented so far these API methods:
  * autocomplete
  * detail
  * CZ autocomplete
+ * CZ detail
    
 If you wish to implement other methods, please send a pull request.
