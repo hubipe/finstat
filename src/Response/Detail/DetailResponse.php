@@ -135,6 +135,9 @@ class DetailResponse extends BaseResponse
 
 	/** @var string|NULL */
 	private $salesCategory;
+	
+	/** @var array|NULL */
+    	private $bankAccounts;
 
 	public function getIco(): string
 	{
@@ -678,6 +681,19 @@ class DetailResponse extends BaseResponse
 		return $this;
 	}
 
+	/**
+     	 * @return string|NULL
+     	 */
+    	public function getBankAccounts()
+    	{
+        	return $this->bankAccounts;
+    	}
+
+    	public function setBankAccounts(array $bankAccounts = NULL): self
+    	{
+        	$this->bankAccounts = $bankAccounts;
+        	return $this;
+    	}
 
 
 }
