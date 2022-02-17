@@ -92,7 +92,10 @@ class DetailParser extends ObjectPrototype implements IParser
 			->setRevenueActual($json->RevenueActual)
 			->setJudgementIndicators($judgementIndicator)
 			->setJudgementFinstatLink($json->JudgementFinstatLink)
-			->setSalesCategory($json->SalesCategory);
+			->setSalesCategory($json->SalesCategory)
+         		->setBankAccounts($json->BankAccounts)
+        		;
+
 
 		if ($json->IcDphAdditional !== NULL) {
 			$detail->setIcDphParagraph($json->IcDphAdditional->Paragraph)
