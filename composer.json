@@ -13,8 +13,8 @@
 		"php": "^7.0 || ^8.0",
 		"ext-json": "*",
 		"ext-mbstring": "*",
-		"consistence-community/consistence": "~1.0|~2.0",
-		"nette/utils": ">=2.2"
+		"consistence-community/consistence": "~1.0 || ~2.0",
+		"nette/utils": "^2.2 || ^3.0 || ^4.0"
 	},
 	"suggest": {
 		"guzzlehttp/guzzle": "If you don't want to implement your own API request client (IRequestClient), the Guzzle HTTP client is required."
