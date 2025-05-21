@@ -37,8 +37,8 @@ class AutocompleteRequest extends ObjectPrototype implements IRequest
 		string $query,
 		string $apiKey,
 		string $privateKey,
-		string $stationId = NULL,
-		string $stationName = NULL)
+		?string $stationId = NULL,
+		?string $stationName = NULL)
 	{
 		$query = Strings::trim($query);
 		if (Strings::length($query) < 3) {

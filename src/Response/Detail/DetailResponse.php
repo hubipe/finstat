@@ -160,7 +160,7 @@ class DetailResponse extends BaseResponse
 		return $this->registerNumberText;
 	}
 
-	public function setRegisterNumberText(string $registerNumberText = NULL): self
+	public function setRegisterNumberText(?string $registerNumberText = NULL): self
 	{
 		$this->registerNumberText = $registerNumberText;
 		return $this;
@@ -174,7 +174,7 @@ class DetailResponse extends BaseResponse
 		return $this->dic;
 	}
 
-	public function setDic(string $dic = NULL): self
+	public function setDic(?string $dic = NULL): self
 	{
 		$this->dic = $dic;
 		return $this;
@@ -188,7 +188,7 @@ class DetailResponse extends BaseResponse
 		return $this->icDph;
 	}
 
-	public function setIcDph(string $icDph = NULL): self
+	public function setIcDph(?string $icDph = NULL): self
 	{
 		$this->icDph = $icDph;
 		return $this;
@@ -202,7 +202,7 @@ class DetailResponse extends BaseResponse
 		return $this->icDphParagraph;
 	}
 
-	public function setIcDphParagraph(string $icDphParagraph = NULL): self
+	public function setIcDphParagraph(?string $icDphParagraph = NULL): self
 	{
 		$this->icDphParagraph = $icDphParagraph;
 		return $this;
@@ -216,7 +216,7 @@ class DetailResponse extends BaseResponse
 		return $this->icDphCancelListDetectedDate;
 	}
 
-	public function setIcDphCancelListDetectedDate(DateTimeImmutable $icDphCancelListDetectedDate = NULL): self
+	public function setIcDphCancelListDetectedDate(?DateTimeImmutable $icDphCancelListDetectedDate = NULL): self
 	{
 		$this->icDphCancelListDetectedDate = $icDphCancelListDetectedDate;
 		return $this;
@@ -230,7 +230,7 @@ class DetailResponse extends BaseResponse
 		return $this->icDphRemoveListDetectedDate;
 	}
 
-	public function setIcDphRemoveListDetectedDate(DateTimeImmutable $icDphRemoveListDetectedDate = NULL): self
+	public function setIcDphRemoveListDetectedDate(?DateTimeImmutable $icDphRemoveListDetectedDate = NULL): self
 	{
 		$this->icDphRemoveListDetectedDate = $icDphRemoveListDetectedDate;
 		return $this;
@@ -255,7 +255,7 @@ class DetailResponse extends BaseResponse
 		return $this->street;
 	}
 
-	public function setStreet(string $street = NULL): self
+	public function setStreet(?string $street = NULL): self
 	{
 		$this->street = $street;
 		return $this;
@@ -269,7 +269,7 @@ class DetailResponse extends BaseResponse
 		return $this->streetNumber;
 	}
 
-	public function setStreetNumber(string $streetNumber = NULL): self
+	public function setStreetNumber(?string $streetNumber = NULL): self
 	{
 		$this->streetNumber = $streetNumber;
 		return $this;
@@ -283,7 +283,7 @@ class DetailResponse extends BaseResponse
 		return $this->zipCode;
 	}
 
-	public function setZipCode(string $zipCode = NULL): self
+	public function setZipCode(?string $zipCode = NULL): self
 	{
 		$this->zipCode = $zipCode;
 		return $this;
@@ -297,7 +297,7 @@ class DetailResponse extends BaseResponse
 		return $this->city;
 	}
 
-	public function setCity(string $city = NULL): self
+	public function setCity(?string $city = NULL): self
 	{
 		$this->city = $city;
 		return $this;
@@ -311,7 +311,7 @@ class DetailResponse extends BaseResponse
 		return $this->district;
 	}
 
-	public function setDistrict(string $district = NULL): self
+	public function setDistrict(?string $district = NULL): self
 	{
 		$this->district = $district;
 		return $this;
@@ -325,7 +325,7 @@ class DetailResponse extends BaseResponse
 		return $this->region;
 	}
 
-	public function setRegion(string $region = NULL): self
+	public function setRegion(?string $region = NULL): self
 	{
 		$this->region = $region;
 		return $this;
@@ -339,7 +339,7 @@ class DetailResponse extends BaseResponse
 		return $this->country;
 	}
 
-	public function setCountry(string $country = NULL): self
+	public function setCountry(?string $country = NULL): self
 	{
 		$this->country = $country;
 		return $this;
@@ -353,7 +353,7 @@ class DetailResponse extends BaseResponse
 		return $this->activity;
 	}
 
-	public function setActivity(string $activity = NULL): self
+	public function setActivity(?string $activity = NULL): self
 	{
 		$this->activity = $activity;
 		return $this;
@@ -367,7 +367,7 @@ class DetailResponse extends BaseResponse
 		return $this->created;
 	}
 
-	public function setCreated(DateTimeImmutable $created = NULL): self
+	public function setCreated(?DateTimeImmutable $created = NULL): self
 	{
 		$this->created = $created;
 		return $this;
@@ -381,7 +381,7 @@ class DetailResponse extends BaseResponse
 		return $this->cancelled;
 	}
 
-	public function setCancelled(DateTimeImmutable $cancelled = NULL): self
+	public function setCancelled(?DateTimeImmutable $cancelled = NULL): self
 	{
 		$this->cancelled = $cancelled;
 		return $this;
@@ -428,7 +428,7 @@ class DetailResponse extends BaseResponse
 		return $this->warningUrl;
 	}
 
-	public function setWarningUrl(string $warningUrl = NULL): self
+	public function setWarningUrl(?string $warningUrl = NULL): self
 	{
 		$this->warningUrl = $warningUrl;
 		return $this;
@@ -453,7 +453,7 @@ class DetailResponse extends BaseResponse
 		return $this->paymentOrderUrl;
 	}
 
-	public function setPaymentOrderUrl(string $paymentOrderUrl = NULL): self
+	public function setPaymentOrderUrl(?string $paymentOrderUrl = NULL): self
 	{
 		$this->paymentOrderUrl = $paymentOrderUrl;
 		return $this;
@@ -476,7 +476,7 @@ class DetailResponse extends BaseResponse
 		return $this->orChangeUrl;
 	}
 
-	public function setOrChangeUrl(string $orChangeUrl = NULL): self
+	public function setOrChangeUrl(?string $orChangeUrl = NULL): self
 	{
 		$this->orChangeUrl = $orChangeUrl;
 		return $this;
@@ -512,7 +512,7 @@ class DetailResponse extends BaseResponse
 		return $this->skNaceCode;
 	}
 
-	public function setSkNaceCode(string $skNaceCode = NULL): self
+	public function setSkNaceCode(?string $skNaceCode = NULL): self
 	{
 		$this->skNaceCode = $skNaceCode;
 		return $this;
@@ -526,7 +526,7 @@ class DetailResponse extends BaseResponse
 		return $this->skNaceText;
 	}
 
-	public function setSkNaceText(string $skNaceText = NULL): self
+	public function setSkNaceText(?string $skNaceText = NULL): self
 	{
 		$this->skNaceText = $skNaceText;
 		return $this;
@@ -540,7 +540,7 @@ class DetailResponse extends BaseResponse
 		return $this->skNaceDivision;
 	}
 
-	public function setSkNaceDivision(string $skNaceDivision = NULL): self
+	public function setSkNaceDivision(?string $skNaceDivision = NULL): self
 	{
 		$this->skNaceDivision = $skNaceDivision;
 		return $this;
@@ -554,7 +554,7 @@ class DetailResponse extends BaseResponse
 		return $this->skNaceGroup;
 	}
 
-	public function setSkNaceGroup(string $skNaceGroup = NULL): self
+	public function setSkNaceGroup(?string $skNaceGroup = NULL): self
 	{
 		$this->skNaceGroup = $skNaceGroup;
 		return $this;
@@ -568,7 +568,7 @@ class DetailResponse extends BaseResponse
 		return $this->legalFormCode;
 	}
 
-	public function setLegalFormCode(string $legalFormCode = NULL): self
+	public function setLegalFormCode(?string $legalFormCode = NULL): self
 	{
 		$this->legalFormCode = $legalFormCode;
 		return $this;
@@ -582,7 +582,7 @@ class DetailResponse extends BaseResponse
 		return $this->legalFormText;
 	}
 
-	public function setLegalFormText(string $legalFormText = NULL): self
+	public function setLegalFormText(?string $legalFormText = NULL): self
 	{
 		$this->legalFormText = $legalFormText;
 		return $this;
@@ -596,7 +596,7 @@ class DetailResponse extends BaseResponse
 		return $this->rpvsInsert;
 	}
 
-	public function setRpvsInsert(string $rpvsInsert = NULL): self
+	public function setRpvsInsert(?string $rpvsInsert = NULL): self
 	{
 		$this->rpvsInsert = $rpvsInsert;
 		return $this;
@@ -610,7 +610,7 @@ class DetailResponse extends BaseResponse
 		return $this->rpvsUrl;
 	}
 
-	public function setRpvsUrl(string $rpvsUrl = NULL): self
+	public function setRpvsUrl(?string $rpvsUrl = NULL): self
 	{
 		$this->rpvsUrl = $rpvsUrl;
 		return $this;
@@ -624,7 +624,7 @@ class DetailResponse extends BaseResponse
 		return $this->profitActual;
 	}
 
-	public function setProfitActual(float $profitActual = NULL): self
+	public function setProfitActual(?float $profitActual = NULL): self
 	{
 		$this->profitActual = $profitActual;
 		return $this;
@@ -638,7 +638,7 @@ class DetailResponse extends BaseResponse
 		return $this->revenueActual;
 	}
 
-	public function setRevenueActual(float $revenueActual = NULL): self
+	public function setRevenueActual(?float $revenueActual = NULL): self
 	{
 		$this->revenueActual = $revenueActual;
 		return $this;
@@ -663,7 +663,7 @@ class DetailResponse extends BaseResponse
 		return $this->judgementFinstatLink;
 	}
 
-	public function setJudgementFinstatLink(string $judgementFinstatLink = NULL): self
+	public function setJudgementFinstatLink(?string $judgementFinstatLink = NULL): self
 	{
 		$this->judgementFinstatLink = $judgementFinstatLink;
 		return $this;
@@ -677,7 +677,7 @@ class DetailResponse extends BaseResponse
 		return $this->salesCategory;
 	}
 
-	public function setSalesCategory(string $salesCategory = NULL): self
+	public function setSalesCategory(?string $salesCategory = NULL): self
 	{
 		$this->salesCategory = $salesCategory;
 		return $this;
@@ -691,7 +691,7 @@ class DetailResponse extends BaseResponse
 		return $this->bankAccounts;
 	}
 
-	public function setBankAccounts(array $bankAccounts = NULL): self
+	public function setBankAccounts(?array $bankAccounts = NULL): self
 	{
 		Type::checkType($bankAccounts, BankAccount::class . '[]|NULL');
 		$this->bankAccounts = $bankAccounts;

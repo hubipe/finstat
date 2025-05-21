@@ -24,7 +24,7 @@ class CzAutocompleteResult extends ObjectPrototype
 	public function __construct(
 		string $ico,
 		string $name,
-		string $city = NULL,
+		?string $city = NULL,
 		bool $cancelled = FALSE)
 	{
 		$this->ico = $ico;

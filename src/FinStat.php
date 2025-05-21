@@ -48,8 +48,8 @@ class FinStat extends ObjectPrototype
 		IRequestClient $requestClient,
 		string $apiKey,
 		string $privateKey,
-		string $stationId = NULL,
-		string $stationName = NULL)
+		?string $stationId = NULL,
+		?string $stationName = NULL)
 	{
 		$this->requestClient = $requestClient;
 		$this->apiKey = $apiKey;
