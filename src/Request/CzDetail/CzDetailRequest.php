@@ -36,8 +36,8 @@ class CzDetailRequest extends ObjectPrototype implements IRequest
 		string $ico,
 		string $apiKey,
 		string $privateKey,
-		string $stationId = NULL,
-		string $stationName = NULL)
+		?string $stationId = NULL,
+		?string $stationName = NULL)
 	{
 		$numericIco = preg_replace('/\D+/', '', $ico);
 		if ($numericIco === '') {

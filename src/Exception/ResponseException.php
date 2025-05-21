@@ -12,7 +12,7 @@ class ResponseException extends \RuntimeException implements FinStatException
 	/** @var int */
 	private $responseHttpCode;
 
-	public function __construct(int $responseHttpCode, string $message = NULL, Throwable $previous = NULL)
+	public function __construct(int $responseHttpCode, ?string $message = NULL, ?Throwable $previous = NULL)
 	{
 		if ($message === NULL) {
 			if ($responseHttpCode === 402) {
